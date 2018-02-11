@@ -4,7 +4,8 @@ import (
 	"fmt"
 	"os"
 	"strconv"
-	"text/ch2/tempconv"
+
+	"gopl.io/ch02/text/tempconv"
 )
 
 func main() {
@@ -14,6 +15,9 @@ func main() {
 			fmt.Fprintf(os.Stderr, "cf: %v\n", err)
 			os.Exit(1)
 		}
-		f:=
+		f := tempconv.Fahrenheit(t)
+		c := tempconv.Celsius(t)
+		fmt.Printf("%s = %s, %s = %s\n",
+			f, tempconv.FToC(f), c, tempconv.CToF(c))
 	}
 }
