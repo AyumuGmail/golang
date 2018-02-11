@@ -24,6 +24,17 @@ func PopCount(x uint64) int {
 }
 
 func PopCountLoop(x uint64) int {
+	var mask uint64 = 1
+	var num int
+
+	for ; mask != 0; mask = mask << 1 {
+		if (x & mask) != 0 {
+			num++
+		}
+	}
+	return num
+}
+func PopCountXminusOneLoop(x uint64) int {
 	var num int
 	for ; x != 0; x &= x - 1 {
 		num++
