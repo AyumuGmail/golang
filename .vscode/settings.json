@@ -1,4 +1,9 @@
 {
       // Specify GOPATH here to override the one that is set as environment variable. The inferred GOPATH from workspace root overrides this, if go.inferGopath is set to true.
-    "go.gopath": "~/workspace/golang" 
-}
+    "go.gopath": "~/workspace/golang",
+    "go.lintFlags": [
+      "--disable-all",
+      "--enable=golint",
+      "--config=~/.gometalinter"
+    ]
+  }
