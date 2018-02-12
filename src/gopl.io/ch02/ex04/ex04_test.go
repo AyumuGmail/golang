@@ -19,6 +19,14 @@ func TestExec(t *testing.T) {
 		b := make([]byte, 8)
 		binary.LittleEndian.PutUint64(b, test.x)
 		fmt.Printf("%v %d %d  %T:%v\n", test.x, PopCount(test.x), PopCountLoop(test.x), b, b)
+
+		want := PopCount(test.x)
+		if want != PopCountLoopArg(test.x) {
+			t.Errorf("PopCountLoop:expected:%v atcual:%v\n", want, PopCountLoopArg(test.x))
+		}
+		if want != PopCountXminusOneLoop(test.x) {
+			t.Errorf("PopCountLoop:expected:%v atcual:%v\n", want, PopCountXminusOneLoop(test.x))
+		}
 	}
 }
 
@@ -38,6 +46,14 @@ func BenchmarkPopCountLoop(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		for _, arg := range benchArgs {
 			PopCountLoop(arg)
+		}
+	}
+}
+
+func BenchmarkPopCountLoopArg(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		for _, arg := range benchArgs {
+			PopCountLoopArg(arg)
 		}
 	}
 }

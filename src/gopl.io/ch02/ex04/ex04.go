@@ -41,6 +41,17 @@ func PopCountLoop(x uint64) int {
 	//fmt.Printf("loop cnt:%d\n", i)
 	return num
 }
+func PopCountLoopArg(x uint64) int {
+	var mask uint64 = 1
+	var num int
+
+	for ; x != 0; x = x >> 1 {
+		if (x & mask) != 0 {
+			num++
+		}
+	}
+	return num
+}
 func PopCountXminusOneLoop(x uint64) int {
 	var num int
 	for ; x != 0; x &= x - 1 {
