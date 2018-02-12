@@ -12,10 +12,11 @@ import (
 )
 
 var palette = []color.Color{
-	color.RGBA{0, 0, 0, 1},
-	color.RGBA{0, 255, 0, 255}, //Green
-	color.RGBA{255, 0, 0, 255}, //Red
-	color.RGBA{0, 0, 255, 255}, //Blue
+	color.White,
+	color.Black,
+	color.RGBA{0, 0xff, 0, 0xff}, //Green
+	color.RGBA{0xff, 0, 0, 0xff}, //Red
+	color.RGBA{0, 0, 0xff, 0xff}, //Blue
 }
 
 const (
