@@ -38,13 +38,21 @@ func mandelbrot(z complex128) color.Color {
 	const iterations = 200
 	const contrast = 15
 
+	const (
+		RGBRed, RGBGreen, RGBBlue, RGBAlpha = 240, 15, 15, 0xff
+	)
+
 	var v complex128
 	for n := uint8(0); n < iterations; n++ {
 		v = v*v + z
 		if cmplx.Abs(v) > 2 {
 			//return color.Gray{255 - contrast*n}
 			//フルカラーでも同じ色っていうのが正解?
-			return color.RGBA{255 - contrast*n, 255 - contrast*n, 255 - contrast*n, 0xff}
+			//return color.RGBA{255 - contrast*n, 255 - contrast*n, 255 - contrast*n, 0xff}
+			return color.RGBA{RGBRed - contrast*n,
+				RGBGreen - contrast*n,
+				RGBBlue - contrast*n,
+				RGBAlpha}
 		}
 	}
 	return color.Black
