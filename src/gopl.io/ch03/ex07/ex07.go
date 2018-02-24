@@ -39,7 +39,7 @@ func mainProc() {
 }
 
 const (
-	RGBRed, RGBGreen, RGBBlue, RGBAlpha = 150, 200, 50, 0xff
+	RGBRed, RGBGreen, RGBBlue, RGBAlpha = 200, 200, 200, 0xff
 )
 
 func newton(z complex128) color.RGBA {
