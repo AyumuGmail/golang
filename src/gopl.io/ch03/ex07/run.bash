@@ -1,8 +1,7 @@
 #!/bin/bash
 
-go run ex06.go
+go run ex07.go
 
 open img.png
-open img1.png
 
 
