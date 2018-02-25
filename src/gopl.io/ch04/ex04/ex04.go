@@ -22,3 +22,18 @@ func rotate(s []int, d int) []int {
 	}
 	return s2
 }
+
+/*
+func rotateOnePath(s []int, d int) []int {
+	tmp := s[0]
+
+	for i := 0; i < len(s); i++ {
+		if i+d < len(s) {
+			s2[i+d] = s[i]
+		} else {
+			s2[i+d-len(s)] = s[i]
+		}
+	}
+	return s2
+}
+*/
